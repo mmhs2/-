@@ -1,0 +1,21 @@
+<% if flash[:notice] %>
+    <div class="flash">
+    <%= flash[:notice] %>
+    </div>
+<% end %>
+<% @book.errors.full_messages.each do |message| %>
+ <div class="form-error">
+  <%= message %>
+ </div>
+<% end %>
+<p>
+ <strong>Title:</strong>
+ <%= @book.title %>
+</p>
+<p>
+ <strong>Body:</strong>
+ <%= @book.body %>
+</p>
+<br>
+   <%= link_to "Edit", edit_book_path(@book.id) %> ｜
+   <%= link_to "Back",books_path %>
